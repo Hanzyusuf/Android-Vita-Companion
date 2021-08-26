@@ -1,7 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:id="@+id/layout_manual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/common_margin_small">
+
+            <Button
+                android:id="@+id/btn_download_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Note: You must have VitaCompanion installed on your PS Vita to be able to use this app!\nClick here for more info."
+                android:textSize="@dimen/common_text_size_min"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                android:text="Make sure that both the devices, the PS Vita and this mobile, are on the same network.\n\nYou can also turn on your mobile hotspot and connect your PS Vita to your hotspot.\n\nYou may also reserve or assign a static ip to your vita to make sure it stays the same all the time.\n\nEnter the ip address of your PS Vita below. You can find this in your PS Vita network settings."
+                android:textSize="@dimen/common_text_size_smallest"/>
+
+            <EditText
+                android:id="@+id/et_ip_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                android:hint="ex: 192.168.1.100"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/common_text_size_smaller"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_fill_network_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/common_margin_medium"
+                    android:gravity="center"
+                    android:text="Fill Network ID"
+                    android:textSize="@dimen/common_text_size_min"
+                    android:backgroundTint="@color/colorAccent"/>
+
+                <Button
+                    android:id="@+id/btn_fill_last_saved"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_margin_medium"
+                    android:paddingHorizontal="@dimen/common_margin_medium"
+                    android:gravity="center"
+                    android:text="Fill Last Saved"
+                    android:textSize="@dimen/common_text_size_min"
+                    android:backgroundTint="@color/colorAccent"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <GridLayout
+            android:id="@+id/layout_device_actions"
+            android:layout_marginTop="@dimen/common_margin_largest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:columnCount="2">
+
+            <ImageButton
+                android:id="@+id/imgbtn_vita_screen_on"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_columnWeight="1"
+                android:paddingVertical="@dimen/common_margin_medium"
+                android:elevation="@dimen/common_margin_smaller"
+                android:backgroundTint="@color/white"
+                android:contentDescription="turn screen on"
+                android:src="@drawable/vita_screen_on"/>
+
+            <ImageButton
+                android:id="@+id/imgbtn_vita_screen_off"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_columnWeight="1"
+                android:paddingVertical="@dimen/common_margin_medium"
+                android:elevation="@dimen/common_margin_smaller"
+                android:backgroundTint="@color/white"
+                android:contentDescription="turn screen off"
+                android:src="@drawable/vita_screen_off"/>
+
+            <ImageButton
+                android:id="@+id/imgbtn_vita_kill_apps"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_columnWeight="1"
+                android:paddingVertical="@dimen/common_margin_medium"
+                android:elevation="@dimen/common_margin_smaller"
+                android:backgroundTint="@color/white"
+                android:contentDescription="kill all applications"
+                android:src="@drawable/vita_kill_apps"/>
+
+            <ImageButton
+                android:id="@+id/imgbtn_vita_reboot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_columnWeight="1"
+                android:paddingVertical="@dimen/common_margin_medium"
+                android:elevation="@dimen/common_margin_smaller"
+                android:backgroundTint="@color/white"
+                android:contentDescription="reboot ps vita"
+                android:src="@drawable/vita_reboot"/>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/common_margin_medium"
+        android:background="@color/black_overlay"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/common_margin_medium"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="@dimen/common_margin_largest">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                android:text="please wait..."/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

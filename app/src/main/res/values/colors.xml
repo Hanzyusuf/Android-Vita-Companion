@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+    <color name="POSITIVE">#1CB516</color>
+    <color name="NEUTRAL">#2196F3</color>
+    <color name="NEGATIVE">#E12222</color>
+
+    <color name="RSSI_EXCELLENT">#1CB516</color>
+    <color name="RSSI_GOOD">#03A9F4</color>
+    <color name="RSSI_FAIR">#FFC107</color>
+    <color name="RSSI_WEAK">#E12222</color>
+    <color name="RSSI_POOR">#E12222</color>
+
+    <color name="GAME_OVER">#E12222</color>
+
+    <color name="STATUS_CONNECTED">#1CB516</color>
+    <color name="STATUS_CONNECTING">#FFC107</color>
+    <color name="STATUS_INITIALIZING">#3290DC</color>
+    <color name="STATUS_DISCONNECTED">#E12222</color>
+
+    <!--<color name="colorPrimary">#3290DC</color>
+    <color name="colorPrimaryDark">#FFC107</color>
+    <color name="colorAccent">#F44336</color>-->
+
+    <color name="colorPrimary">#a1887f</color>
+    <color name="colorPrimaryDark">#725b53</color>
+    <color name="colorAccent">#ff8a65</color>
+
+    <color name="black_overlay">#31000000</color>
 </resources>
